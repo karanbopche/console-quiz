@@ -36,6 +36,10 @@ int main()
             scanf(" %[^\n]s", Buffer);
             ezxml_set_txt(ezxml_add_child(QuestionTag, "Option", OptionNumber), Buffer);
         }
+        printf("enter the right option\n");
+        scanf(" %c", Buffer);
+        Buffer[1] = '\0';
+        ezxml_set_txt(ezxml_add_child(QuestionTag, "Answer", 0), Buffer);
         printf("do you want to add another question ? [y/n]");
         scanf(" %c", &ret);
         if(ret=='n' || ret=='N')
